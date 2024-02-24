@@ -41,14 +41,14 @@ def main():
                         #generate ZoeDepth depth data
                         depth_image = zoe.infer_pil(image)
 
-                        ##save normalized ZoeDepth depth data to png
-                        #normalized_depth = cv2.normalize(depth_image, None, 0, 255, cv2.NORM_MINMAX, dtype=cv2.CV_8U)
-                        #new_filename_normalized = base_name + ext
-                        #new_dir_path = dirpath.replace(image_directory, new_image_directory, 1 )
-                        #new_image_path_normalized = os.path.join(f"{new_dir_path}", new_filename_normalized)
-                        #os.makedirs(new_dir_path, exist_ok=True)
-                        #cv2.imwrite(new_image_path_normalized, normalized_depth)
-                        #print(f"Saved depth data from ZoeDepth to {new_image_path_normalized}")
+                        #save normalized ZoeDepth depth data to png
+                        normalized_depth = cv2.normalize(depth_image, None, 0, 255, cv2.NORM_MINMAX, dtype=cv2.CV_8U)
+                        new_filename_normalized = base_name + ext
+                        new_dir_path = dirpath.replace(image_directory, new_image_directory, 1 )
+                        new_image_path_normalized = os.path.join(f"{new_dir_path}", new_filename_normalized)
+                        os.makedirs(new_dir_path, exist_ok=True)
+                        cv2.imwrite(new_image_path_normalized, normalized_depth)
+                        print(f"Saved depth data from ZoeDepth to {new_image_path_normalized}")
 
 
                         #generate ZoeDepth depth data
