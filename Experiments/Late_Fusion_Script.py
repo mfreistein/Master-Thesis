@@ -472,11 +472,7 @@ def generate_datasets(data, train_scheme, transform_train):
     val_dataset = CustomImageDataset(rgb_folder_path=rgb_folder_base + 'val', depth_folder_path=depth_folder_base_val + 'val', processor=processor, transform=transform_val)
     ##val_dataset = CustomImageDataset(rgb_folder_path=rgb_folder_base + 'test', depth_folder_path=depth_folder_base + 'test', processor=processor, transform=transform_val)
     test_dataset = CustomImageDataset(rgb_folder_path=rgb_folder_base + 'test', depth_folder_path=depth_folder_base_test + 'test', processor=processor, transform=transform_val)
-
-    #ALTERNATIVE PLEASE DELETE LATER
-    #train_dataset = CustomImageDataset(rgb_folder_path=rgb_folder_base + 'train', depth_folder_path=depth_folder_base_train + 'train', processor=None, transform=CustomTransforms().synchronized_transform_val_metric)    
-    ############################################################################################
-
+	
     return train_dataset, val_dataset, test_dataset
 
 def generate_data_loaders(train_dataset, val_dataset, test_dataset, batch_size):
